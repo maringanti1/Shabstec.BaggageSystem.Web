@@ -1,0 +1,105 @@
+﻿@page "/charts"
+@using System.Text.Json;
+@inject IAccountService AccountService
+@inject IJSRuntime JSRuntime
+
+
+<div class="card">
+    <h4 class="card-header" style="color:blue;">Login</h4>
+    <div class="card-body">
+        <h3 style="color:white;">User Chart</h3>
+        <div id="userChart"></div>
+
+        <h3 style="color:white;">Configuration Pie Chart</h3>
+        <div id="configPieChart"></div>
+    </div>
+</div>
+
+@code {
+    private List<User> users;
+    private List<Configuration> configurations;
+
+    private string userChartScript;
+    private string configPieChartScript;
+
+    protected override async void OnInitialized()
+    {
+        // Initialize users and configurations (you should populate them accordingly)
+        List<User> users = await AccountService.GetAll();
+        IList<Configuration> configurations = await AccountService.GetAllConfigurations();
+        // Create chart scripts
+        userChartScript = GenerateUserChartScript(users);
+        configPieChartScript = GenerateConfigPieChartScript(configurations);
+        await Task.Delay(100);
+        await JSRuntime.InvokeVoidAsync("eval", userChartScript);
+        await JSRuntime.InvokeVoidAsync("eval", configPieChartScript);
+
+        // Execute chart scripts
+
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Delay execution by a short time
+            await Task.Delay(100);
+
+            // Execute chart scripts
+            await JSRuntime.InvokeVoidAsync("eval", userChartScript);
+            await JSRuntime.InvokeVoidAsync("eval", configPieChartScript);
+        }
+    }
+
+    private string GenerateUserChartScript(List<User> users)
+    {
+        // Customize this script based on the specific chart type you want
+        return $@"
+            var userChart = Highcharts.chart('userChart', {{
+                chart: {{
+                    type: 'bar'
+                }},
+                title: {{
+                    text: 'User Chart',
+                    style: {{
+                color: 'white'
+            }}
+                }},
+                xAxis: {{
+                    categories: {JsonSerializer.Serialize(users.Select(u => u.Username))}
+                }},
+                yAxis: {{
+                    title: {{
+                        text: 'User Count'
+                    }}
+                }},
+                series: [{{
+                    name: 'Users',
+                    data: {JsonSerializer.Serialize(users.Select(u => u.Id.Length))}
+                }}]
+            }});
+        ";
+    }
+
+    private string GenerateConfigPieChartScript(IList<Configuration> configurations)
+    {
+        // Customize this script based on the specific chart type you want
+        return $@"
+            var configPieChart = Highcharts.chart('configPieChart', {{
+                chart: {{
+                    type: 'pie'
+                }},
+                title: {{
+                    text: 'Configuration Pie Chart',
+            style: {{
+                color: 'white'
+            }}
+                }},
+                series: [{{
+                    name: 'Configuration',
+                    data: {JsonSerializer.Serialize(configurations.Select(c => new { name = c.UserName, y = c.AirLineCodes.Length }))}
+                }}]
+            }});
+        ";
+    }
+}

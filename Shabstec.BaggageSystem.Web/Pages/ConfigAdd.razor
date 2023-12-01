@@ -1,0 +1,157 @@
+﻿@page "/configuration/add"
+@using Microsoft.Azure.Cosmos
+@using BlazorApp.Web.Models
+@inject IAlertService AlertService
+@inject IAccountService AccountService
+@inject NavigationManager NavigationManager
+
+<h1>Add Configuration</h1>
+
+<EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+
+    <!-- Section 1: Publishers Configuration -->
+    <div class="section section-primary">
+        <h2 class="section-header">Publishers Configuration</h2>
+        <div class="alert alert-warning">
+            Airline Codes are used to fetch the messages from Airlines/Airports service bus queue
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Airline Codes</label>
+                <InputText @bind-Value="model.AirLineCodes" class="form-control" />
+                <ValidationMessage For="@(() => model.AirLineCodes)" />
+            </div>
+            </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Publisher Queue Name</label>
+                <InputText @bind-Value="model.BrokerSvcBusQueueName" class="form-control" />
+                <ValidationMessage For="@(() => model.BrokerSvcBusQueueName)" />
+            </div>
+            </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Publisher Queue End Point</label>
+                <InputText @bind-Value="model.BrokerSvcBusURL" class="form-control" />
+                <ValidationMessage For="@(() => model.BrokerSvcBusURL)" />
+            </div>
+        </div> 
+        </div>
+    <!-- Section 2: Message Broker Configuration -->
+    <div class="section section-secondary">
+        <h2 class="section-header">Message Broker Configuration</h2>
+        <div class="alert alert-warning">
+            RabbitMQ Username and Password are used to login Client's Message broker.
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>RabbitMQ Username</label>
+                <InputText @bind-Value="model.RabbitMQUsername" class="form-control" />
+                <ValidationMessage For="@(() => model.RabbitMQUsername)" />
+            </div>
+            <div class="form-group col">
+                <label>RabbitMQ Password</label>
+                <InputText @bind-Value="model.RabbitMQPassword" class="form-control" />
+                <ValidationMessage For="@(() => model.RabbitMQPassword)" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Subscriber Configuration -->
+    <div class="section section-tertiary">
+        <h2 class="section-header">Subscriber Configuration</h2>
+        <div class="alert alert-warning">
+            Subscribed Queue End Point and Queue End Name are used to ...
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Subscribed Airlines/Airports</label>
+                <InputText @bind-Value="model.SubscribedQueueTopic" class="form-control" />
+                <ValidationMessage For="@(() => model.SubscribedQueueTopic)" />
+            </div>
+            </div>
+            <div class="form-row">
+            <div class="form-group col">
+                <label>Subscribed Queue End Point</label>
+                <InputText @bind-Value="model.SubscribedQueueEndPoint" class="form-control" />
+                <ValidationMessage For="@(() => model.SubscribedQueueEndPoint)" />
+                </div>
+                </div>
+                <div class="form-row">
+             
+            <div class="form-group col">
+                <label>Subscribed Queue Name</label>
+                <InputText @bind-Value="model.SubscribedQueueName" class="form-control" />
+                <ValidationMessage For="@(() => model.SubscribedQueueName)" />
+            </div>
+            </div>
+        </div> 
+
+    <div class="form-group">
+        <button disabled="@loading" class="btn btn-primary">
+            @if (loading)
+            {
+                <span class="spinner-border spinner-border-sm mr-1"></span>
+            }
+            Save Configuration
+        </button>
+        <NavLink href="users" class="btn btn-link">Cancel</NavLink>
+    </div>
+</EditForm>
+
+<style>
+    .section {
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    .section-primary {
+        background-color: #f8d7da; /* Red background color */
+    }
+
+    .section-secondary {
+        background-color: #d4edda; /* Green background color */
+    }
+
+    .section-tertiary {
+        background-color: #cfe2f3; /* Blue background color */
+    }
+
+    .section-header {
+        background-color: lightgoldenrodyellow; /* Yellow header background color */
+        padding: 5px;
+    }
+</style>
+
+@code {
+    private Configuration model = new Configuration();
+    private bool loading;
+
+    private async void OnValidSubmit()
+    {
+        AlertService.Clear();
+
+        loading = true;
+        
+        try
+        {
+            // Save the configuration using AccountService
+            await AccountService.Baggage(model);
+            AlertService.Success("Configuration added successfully", keepAfterRouteChange: true);
+            NavigationManager.NavigateTo("configuration");
+        }
+        catch (Exception ex)
+        {
+            AlertService.Error(ex.Message);
+            loading = false;
+            StateHasChanged();
+        }
+    }
+
+    private void ResetForm()
+    {
+        // Reset the form by creating a new Configuration object
+        model = new Configuration();
+    }
+}

@@ -1,0 +1,76 @@
+﻿@page "/download"
+@using System.Text;
+@using System.Net.Http;
+@using System.Text.Json;
+@using BlazorApp.Web.Models;
+@using Microsoft.AspNetCore.Authorization;
+@inject IAlertService AlertService
+@attribute [Authorize]
+@inject IAccountService AccountService
+
+<div style="color:white">
+    <h1>Download Messages</h1>
+    <table class="table table-striped" style="color:white; background-color: slateblue">
+        <thead style="background-color:#a65656;">
+            <tr>
+                <th style="width: 40%">Airport</th>
+                <th style="width: 40%">Message</th>
+                <th style="width: 20%">Download</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (configurations != null)
+            {
+                foreach (var configuration in configurations)
+                {
+                    <tr>
+                        <td>@configuration.id</td>
+                        <td>
+                            @(configuration.Message.Length > 40 ?
+                                configuration.Message.Substring(0, 40) + "..." :
+                                configuration.Message)
+                        </td>
+                         <td style="white-space: nowrap">
+                <button class="btn btn-sm btn-primary mr-1" 
+                        onclick="@(string.Format("DownloadMessage({0})", 
+                        configuration))">
+                    Download
+                </button>
+            </td>  
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <br />
+    @if (loading)
+    {
+        <div class="sample" style="white-space: nowrap; overflow: hidden;">
+            <span class="spinner-border spinner-border-lg mr-1"></span>
+            <span style="color: red;">Please wait, the download happens.</span>
+        </div>
+    }
+</div>
+
+
+
+@code {
+    private bool loading;
+    private IList<BrokerMessage> configurations;
+
+    protected override async Task OnInitializedAsync()
+    {
+        AlertService.Clear();
+        loading = true;
+        configurations = await AccountService.GetAllMessages();
+        loading = false;
+    }
+    //private async Task DownloadMessage(BrokerMessage configuration)
+    //{
+    //    AlertService.Clear();
+    //    loading = true;
+    //    //await AccountService.LaunchDeployment(configuration);
+    //    AlertService.Success("Download completed successfully!", keepAfterRouteChange: true);
+    //    loading = false;
+    //}
+}

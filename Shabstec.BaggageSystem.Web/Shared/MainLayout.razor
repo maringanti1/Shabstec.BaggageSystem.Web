@@ -1,0 +1,170 @@
+﻿@inherits LayoutComponentBase
+@inject IAccountService AccountService
+
+<style>
+    .main {
+        padding: 20px;
+    }
+
+    .login-link {
+        /* Your existing styles for the login link */
+        text-decoration: solid; /* Remove the default underline for links */
+        color: white; /* Set the text color for the login link */
+    }
+
+    .header-box {
+        background-color: #333; /* Set your desired background color */
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        padding: 20px;
+        /*background-color: rgba(255, 255, 255, 0.7);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .header-menu a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+        }
+
+    .header-title {
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        flex-grow: 1; /* Takes up available space and centers the title */
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .register-button {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: #007bff; /* Bootstrap's primary color */
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        z-index: 2; /* Put it on top of the overlay */
+    }
+
+        .register-button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+    .background-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        /* Set your background image properties here */
+        background: url('sample1.webp') no-repeat center center fixed;
+        background-size: cover;
+        /* Additional styles for overlay or effects if needed */
+    }
+
+    .content {
+        position: relative;
+        z-index: 1; /* Ensure the content is above the background image */
+    }
+
+    /* Other styles for header-menu, center-container, main-content, etc. */
+
+</style>
+<div class="background-image">
+    <!-- Background image styles -->
+</div>
+<div class="sidebar">
+    @if (user != null && !string.IsNullOrEmpty(user.FirstName))
+    {
+        <NavMainMenu />
+    }
+    else
+    {
+        <NavMenu />
+    }
+</div>
+<div class="main">
+
+    @if (user != null && !string.IsNullOrEmpty(user.FirstName))
+    {
+        <div class="header-container" style="color:white">
+            <div class="header-title" style="color:white; font-weight:700; text-align:center;">
+                <h1>Shabstec Baggage Broker</h1>
+            </div>
+            Hello, @user.FirstName
+        </div>
+        @* <div class="header-container" style="color:white"><!--!-->
+    <!--!--><div class="header-title" style="color:white; font-weight:700; text-align:center;">Shabstec Baggage Broker</div>
+    Hello, IAAirlines<!--!-->
+    </div>*@
+    }
+    else
+    {
+        <div class="header-container" style="color:white">
+            <div class="header-title" style="color:white; font-weight:700; text-align:center;">
+                <h1>Shabstec Baggage Broker</h1>
+            </div>
+            <div style="max-width: 100%">
+                <a data-ux-btn="primary" class="register-button" href="/login"
+               data-ux="ButtonPrimary">
+                    Login
+                </a>
+            </div>
+        </div>
+
+    }
+    <!-- Rest of your content -->
+    @Body
+</div>
+
+@*<div class="header-menu">
+    <div class="header-title" style="color:white; font-weight:700">Shabstec Baggage Broker</div>
+    @if (user != null && !string.IsNullOrEmpty(user.FirstName))
+    {
+            <div class="right-menu" style="color:white; font-weight:700">
+                Hello, @user.FirstName
+            </div>
+    }
+    else
+    {
+            <div class="right-menu" style="color:white; font-weight:700">
+                <a href="/login" class="ml-md-auto login-link">Login</a>
+            </div>
+    }
+</div>
+<div class="main">
+    <div class="container" style="margin-top: 20px;">
+        @Body
+    </div>
+</div>*@
+
+
+@code {
+    private User user;
+    protected override async Task OnInitializedAsync()
+    {
+        user = await AccountService.GetLoggedInUserDetails();
+    }
+}
