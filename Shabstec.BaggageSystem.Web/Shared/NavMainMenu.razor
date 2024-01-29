@@ -1,61 +1,78 @@
-﻿@inject IAccountService AccountService
+﻿@inject NavigationManager NavigationManager
+@inject IAccountService AccountService
+@inject ILocalStorageService _localStorageService
+@inject IJSRuntime JSRuntime
 
-<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">Baggage System</a>
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<br />
+<div class="top-row pl-4 navbar navbar-dark"> 
+    <img src="bagnition_final_vextor.svg" style="width:400px !important; background-color: white !important">
 </div>
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+<br />
+<div @onclick="ToggleNavMenu">
     <ul class="nav flex-column">
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" style="color: white !important" href="" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="charts">
+            <NavLink class="nav-link" style="color: white !important"  href="charts">
                 <span class="oi oi-chat" aria-hidden="true"></span> Dashboard
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="users">
+            <NavLink class="nav-link" style="color: white !important" href="users">
                 <span class="oi oi-person" aria-hidden="true"></span> Users
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="configuration">
+            <NavLink class="nav-link" style="color: white !important" href="configuration">
                 <span class="oi oi-book" aria-hidden="true"></span> Configuration
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="download">
-                <span class="oi oi-data-transfer-download" aria-hidden="true"></span> Download
+            <NavLink class="nav-link" style="color: white !important" href="transmit">
+                <span class="oi oi-data-transfer-download" aria-hidden="true"></span> Transmit
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="aboutus">
+            <NavLink class="nav-link" style="color: white !important" href="download">
+                <span class="oi oi-data-transfer-download" aria-hidden="true"></span> Recieve
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" style="color: white !important" href="transmitter">
+                <span class="oi oi-data-transfer-download" aria-hidden="true"></span> Publish
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" style="color: white !important" href="aboutus">
                 <span class="oi oi-info" aria-hidden="true"></span> About us
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="contactus">
+            <NavLink class="nav-link" style="color: white !important" href="contactus">
                 <span class="oi oi-phone" aria-hidden="true"></span> Contact us
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="logout">
+            <NavLink class="nav-link" style="color: white !important" @onclick="Logout">
                 <span class="oi oi-account-logout" aria-hidden="true"></span> Logout
             </NavLink>
-        </li>
+        </li> 
+           
     </ul>
+   @* <div id="finalimg" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
+        <!-- Position the finalimg at the bottom -->
+        <img src="rs=w_365,h_365,cg_true.webp" style="width:250px!important">
+    </div>*@
 </div>
 
 @code {
     private bool collapseNavMenu = true;
     private User user;
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
+    private string _userKey = "user";
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
@@ -64,5 +81,14 @@
     protected override async Task OnInitializedAsync()
     {
         user = await AccountService.GetLoggedInUserDetails();
+    }
+    private async Task Logout()
+    {
+        // Remove user details from storage
+        await _localStorageService.RemoveItem(_userKey);
+        // Navigate to the login page
+        NavigationManager.NavigateTo("/login"); 
+        // Trigger a page reload using JavaScript interop
+        await JSRuntime.InvokeVoidAsync("location.reload");
     }
 } 

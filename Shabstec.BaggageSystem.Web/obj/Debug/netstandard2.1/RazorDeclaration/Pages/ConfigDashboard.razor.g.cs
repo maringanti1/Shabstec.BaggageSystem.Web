@@ -13,119 +13,119 @@ namespace Shabstec.BaggageSystem.Web.Pages
     using global::System.Threading.Tasks;
     using global::Microsoft.AspNetCore.Components;
 #nullable restore
-#line 2 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 2 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 3 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 4 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 5 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 6 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 7 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 8 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Shabstec.BaggageSystem.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 9 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Shabstec.BaggageSystem.Web.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 10 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Shabstec.BaggageSystem.Web.Pages;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 11 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using BlazorApp.Services;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 13 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using BlazorApp.Helpers;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
+#line 3 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
 using System.Text;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
+#line 4 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
+#line 5 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
 using System.Text.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
+#line 6 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
 using BlazorApp.Web.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
+#line 7 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
+#line 9 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
            [Authorize]
 
 #line default
@@ -141,7 +141,7 @@ using Microsoft.AspNetCore.Authorization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 62 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
+#line 103 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigDashboard.razor"
        
     private bool loading;
     private IList<Configuration> configurations;
@@ -150,22 +150,37 @@ using Microsoft.AspNetCore.Authorization;
     {
         AlertService.Clear();
         loading = true;
-        configurations = await AccountService.GetAllConfigurations();
+        User user = await AccountService.GetLoggedInUserDetails();
+        if (user != null)
+        {
+            configurations = await AccountService.GetUserConfigurations(user.Username, user.Organisation);
+        }
         loading = false;
     }
-
+    
+    private void EditConfiguration(Configuration configuration)
+    {
+        navigationMgr.NavigateTo($"editconfiguration?id={configuration.id}");
+    }
     private async Task LaunchDeployment(Configuration configuration)
     {
         AlertService.Clear();
         loading = true;
         await AccountService.LaunchDeployment(configuration);
-        AlertService.Success("Deployment completed successfully!", keepAfterRouteChange: true);
+        User user = await AccountService.GetLoggedInUserDetails();
+        if (user != null)
+        {
+            configurations = await AccountService.GetUserConfigurations(user.Username, user.Organisation);
+        } 
+        await jsRuntime.InvokeVoidAsync("showAlert", "Deployment completed successfully!");
         loading = false;
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navigationMgr { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAccountService AccountService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAlertService AlertService { get; set; }
     }

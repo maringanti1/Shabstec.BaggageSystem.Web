@@ -1,12 +1,11 @@
 ﻿@page "/register"
-@using BlazorApp.Services;
+@inject IJSRuntime JSRuntime
 @using BlazorApp.Web.Models;
-@layout MainLayout
 @inject IAccountService AccountService
-@inject IAlertService AlertService
+@inject IAlertService AlertServiceData
 @inject NavigationManager NavigationManager
 
-<div class="card">
+ <div class="card">
     <h4 class="card-header" style="color:blue;">Register</h4>
     <div class="card-body">
         <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
@@ -30,106 +29,78 @@
                         <label>Username</label>
                         <InputText @bind-Value="model.Username" class="form-control" />
                         <ValidationMessage For="@(() => model.Username)" />
-                    </div>
-
-                    @* <div class="form-group">
-                    <label>Password</label>
-                    <InputText @bind-Value="model.TempPassword" type="password" class="form-control" />
-                    <ValidationMessage For="@(() => model.TempPassword)" />
-                    </div>*@
-
-                    <!-- Additional fields for registration -->
-                    <div class="form-group">
-                        <label>Email</label>
-                        <InputText @bind-Value="model.Email" class="form-control" />
-                        <ValidationMessage For="@(() => model.Email)" />
-                    </div>
-                </div>   <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <InputText @bind-Value="model.PhoneNumber" class="form-control" />
-                        <ValidationMessage For="@(() => model.PhoneNumber)" />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Office Phone Number</label>
-                        <InputText @bind-Value="model.OfficePhoneNumber" class="form-control" />
-                        <ValidationMessage For="@(() => model.OfficePhoneNumber)" />
-                    </div>
-                </div>   <div class="col-md-6">
+                    </div> 
                     <div class="form-group">
                         <label>Job Title</label>
                         <InputText @bind-Value="model.JobTitle" class="form-control" />
                         <ValidationMessage For="@(() => model.JobTitle)" />
                     </div>
-
-                   @* <div class="form-group">
-                        <label>Company Type</label>
-                        <InputText @bind-Value="model.CompanyType" class="form-control" />
-                        <ValidationMessage For="@(() => model.CompanyType)" />
-                    </div>*@
-                    <div class="form-group">
-                        <label>Company Type</label>
-                        <select @bind="model.CompanyType" class="form-control">
-                            <option value="IATAMemberAirline">IATA Member Airline</option>
-                            <option value="Airport">Airport</option>
-                            <option value="StrategicPartner">Strategic Partner</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        <ValidationMessage For="@(() => model.CompanyType)" />
-                    </div>
-
-                </div>   <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Airport </label>
-                        <InputText @bind-Value="model.Airport" class="form-control" />
-                        <ValidationMessage For="@(() => model.Airport)" />
-                    </div>
-                    <div class="form-group">
-                        <label>Strategic Partner</label>
-                        <InputText @bind-Value="model.StrategicPartner" class="form-control" />
-                        <ValidationMessage For="@(() => model.StrategicPartner)" />
-                    </div>
-                </div>   <div class="col-md-6">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label>Company Name</label>
                         <InputText @bind-Value="model.CompanyName" class="form-control" />
                         <ValidationMessage For="@(() => model.CompanyName)" />
                     </div>
                     <div class="form-group">
-                        <label>Country Territory</label>
-                        <InputText @bind-Value="model.CountryTerritory" class="form-control" />
-                        <ValidationMessage For="@(() => model.CountryTerritory    )" />
-                    </div>
-                </div>   <div class="col-md-6">
-                    @* <div class="form-group">
-                    <label>ConsentCheckbox</label>
-                    <InputText @bind-Value="model.ConsentCheckbox.ToString()" class="form-control" />
-                    <ValidationMessage For="@(() => model.ConsentCheckbox.ToString())" />
-                    </div>*@
-
-                    <div class="form-group">
-                        <label>Service Request Details</label>
-                        <InputText @bind-Value="model.ServiceRequestDetails" class="form-control" />
-                        <ValidationMessage For="@(() => model.ServiceRequestDetails)" />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Additional Comments </label>
-                        <InputText @bind-Value="model.AdditionalComments" class="form-control" />
-                        <ValidationMessage For="@(() => model.AdditionalComments)" />
-                    </div>
-                    <!-- Other fields can be added similarly -->
+                        <label>Company Type</label>
+                        <select @bind="model.CompanyType" class="form-control" required>
+                            <option value="" disabled selected>Please Select</option>
+                            <option value="IATAMemberAirline">IATA Member Airline</option>
+                            <option value="Airport">Airport</option>
+                            <option value="StrategicPartner">Strategic Partner</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <ValidationMessage For="@(() => model.CompanyType)" />
+                    </div> 
                 </div>
-                
-                <div class="form-group">
-                    <label for="ConsentCheckbox">Consent</label>
-                    <div class="form-check">
-                        <InputCheckbox @bind-Value="model.ConsentCheckbox" class="form-check-input" id="ConsentCheckbox" />
-                        <label class="form-check-label" for="ConsentCheckbox">I consent to the processing of my personal information in accordance with IATA's Privacy Policy.</label>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Country Code</label>
+                        <select id="countrySelect" @bind="model.CountryCode" class="form-control">
+                            @foreach (countries countryCode in CountryCodeList)
+                            {
+                                <option>@countryCode.code</option>
+                            }
+                        </select>
+                    </div> 
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <InputText @bind-Value="model.PhoneNumber" class="form-control" />
+                        <ValidationMessage For="@(() => model.PhoneNumber)" />
                     </div>
-                    <ValidationMessage For="@(() => model.ConsentCheckbox)" />
-                </div> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Office Phone Number</label>
+                        <InputText @bind-Value="model.OfficePhoneNumber" class="form-control" />
+                        <ValidationMessage For="@(() => model.OfficePhoneNumber)" />
+                    </div>  
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <InputText @bind-Value="model.Email" class="form-control" />
+                        <ValidationMessage For="@(() => model.Email)" />
+                    </div>  
+                    <div class="form-group">
+                        <label>Country</label>
+                        <InputText @bind-Value="model.CountryTerritory" class="form-control" />
+                        <ValidationMessage For="@(() => model.CountryTerritory)" />
+                    </div>   
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ConsentCheckbox">Consent</label>
+                <div class="form-check">
+                    <InputCheckbox @bind-Value="model.ConsentCheckbox" class="form-check-input" id="ConsentCheckbox" />
+                    <label class="form-check-label" for="ConsentCheckbox">I consent to the processing of my personal information in accordance with IATA's Privacy Policy.</label>
+                </div>
+                <ValidationMessage For="@(() => model.ConsentCheckbox)" />
             </div>
             <button disabled="@loading" class="btn btn-primary">
                 @if (loading)
@@ -138,33 +109,94 @@
                 }
                 Register
             </button>
-
             <NavLink href="login" class="btn btn-link">Cancel</NavLink>
         </EditForm>
     </div>
 </div>
 
 @code {
+
+
     private Registration model = new Registration();
     private bool loading;
+    private string selectedCountry = "US"; // Default country code
 
-    private async void OnValidSubmit()
+    public List<countries> CountryCodeList { get; private set; }
+
+    public async Task LoadCountryCodeListAsync()
+    {
+        List<string> data = new List<string>();
+        CountryCodeList = new List<countries>();
+        data = await AccountService.GetCountryCodeList();
+        foreach (var d in data)
+            CountryCodeList.Add(new countries
+                {
+
+                    code = d.ToString(),
+                    name = d.ToString()
+                });
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadCountryCodeListAsync();
+    }
+
+
+    //protected override void OnAfterRender(bool firstRender)
+    //{
+    //    if (firstRender)
+    //    {
+    //        // This block of code will run only on the initial render of the component
+    //        ExecuteJavaScript();
+    //    }
+    //}
+
+    //private void ExecuteJavaScript()
+    //{
+    //    // Your JavaScript code goes here
+    //    JSRuntime.InvokeVoidAsync("InvokeService");
+    //}
+
+    //[JSInvokable]
+    //public async Task InvokeService()
+    //{
+    //    // Your XML data
+    //    var xmlStringForJs = xmlString.Replace("\"", "\\\""); // Escape double quotes for JavaScript
+
+    //    await JSRuntime.InvokeVoidAsync("parseXmlAndPopulateDropdown", xmlStringForJs);
+    //}
+
+    // protected override async Task OnInitializedAsync()
+    //{
+    //    AlertServiceData.Clear("");
+    //    loading = true;
+    //    configurations = await AccountService.GetAllConfigurations();
+    //    loading = false;
+    //}
+
+    public async void OnValidSubmit()
     {
         // reset alerts on submit
-        AlertService.Clear();
+        AlertServiceData.Clear("");
 
         loading = true;
         try
         {
             await AccountService.Register(model);
-            AlertService.Success("Registration successful", keepAfterRouteChange: true);
+            AlertServiceData.Success("Registration successful", keepAfterRouteChange: true);
             NavigationManager.NavigateTo("login");
         }
         catch (Exception ex)
         {
-            AlertService.Error(ex.Message);
+            AlertServiceData.Error(ex.Message);
             loading = false;
             StateHasChanged();
         }
     }
+
+
+
 }
+
+

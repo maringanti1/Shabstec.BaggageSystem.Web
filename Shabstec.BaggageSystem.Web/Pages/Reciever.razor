@@ -1,0 +1,157 @@
+﻿@page "/download"
+@using System.Text;
+@using System.Net.Http; 
+@using System.Text.Json;
+@using BlazorApp.Web.Models; 
+@using Microsoft.AspNetCore.Authorization;
+@inject IAlertService AlertService
+@attribute [Authorize]
+@inject IAccountService AccountService
+@inject IJSRuntime jsRuntime
+
+<div style="color:white"> 
+    <h1>Receieved Messages</h1>
+    @*<BlazoredTable Items="@configurations" Filterable="true" PageSize="10">
+    <TableHeader>
+        <th style="width: 40%">Received From</th>
+        <th style="width: 40%">Received On</th>
+        <th style="width: 40%">Message</th>
+    </TableHeader>
+    <TableRowTemplate Context="configuration">
+        <tr>
+            <td>@configuration.ReceivedFrom</td>
+            <td>@configuration.CreateDate</td>
+            <td style="white-space: nowrap">
+                <button class="btn btn-sm btn-primary mr-1" @onclick="() => DownloadMessage(configuration)">
+                    Download
+                </button>
+            </td>
+        </tr>
+    </TableRowTemplate>
+</BlazoredTable>*@
+    <table class="table table-striped" style="color:white; background-color: slateblue">
+        <thead style="background-color:#a65656;">
+            <tr>
+                <th style="width: 40%">Recieved From</th>
+                <th style="width: 40%">Recieved On</th>
+                <th style="width: 40%">Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (configurations != null)
+            {
+                foreach (var configuration in configurations)
+                {
+                    <tr>
+                        <td>@configuration.Host</td>
+                        <td>@configuration.CreateDate</td>
+                        <td style="white-space: nowrap">
+                            <button class="btn btn-sm btn-primary mr-1" 
+                            @onclick="() => DownloadMessage(configuration)"> 
+                                Download
+                            </button>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    @*<table class="table table-striped" style="color: white; background-color: slateblue">
+        <thead style="background-color: #a65656;">
+            <tr>
+                <th style="width: 40%">Received From</th>
+                <th style="width: 40%">Received On</th>
+                <th style="width: 40%">Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var configuration in configurations)
+            {
+                <tr>
+                    <td>@configuration.ReceivedFrom</td>
+                    <td>@configuration.CreateDate</td>
+                    <td style="white-space: nowrap">
+                        <button class="btn btn-sm btn-primary mr-1" @onclick="() => DownloadMessage(configuration)">
+                            Download
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div>
+        <label>Filter:</label>
+        <input @bind="filterText" />
+    </div>
+
+    <div>
+        <label>Page Size:</label>
+        <select @bind="pageSize">
+            <option>5</option>
+            <option>10</option>
+            <option>20</option>
+        </select>
+    </div>
+    <br />*@
+    @if (loading)
+    {
+        <div class="sample" style="white-space: nowrap; overflow: hidden;">
+            <span class="spinner-border spinner-border-lg mr-1"></span>
+            <span style="color: red;">Please wait, the download happens.</span>
+        </div>
+    }
+</div>
+
+
+@code {
+    private bool loading;
+    private IList<BrokerMessage> configurations; 
+    private List<BrokerMessage> filteredConfigurations;
+    private string filterText = "";
+    private int pageSize = 5;
+    private int currentPage = 1;
+     
+
+    //private void UpdateFilteredConfigurations()
+    //{
+    //    filteredConfigurations = configurations
+    //        .Where(c => string.IsNullOrEmpty(filterText) || c.ReceivedFrom.Contains(filterText, StringComparison.OrdinalIgnoreCase))
+    //        .Skip((currentPage - 1) * pageSize)
+    //        .Take(pageSize)
+    //        .ToList();
+    //}
+
+    protected override async Task OnInitializedAsync()
+    {
+        AlertService.Clear();
+        loading = true;
+        User user = await AccountService.GetLoggedInUserDetails();
+        configurations = await AccountService.GetAllMessages(user.Username, user.Organisation);
+        //UpdateFilteredConfigurations();
+        loading = false;
+    }
+
+
+    private async Task DownloadMessage(BrokerMessage brokerMessage)
+    { 
+        try
+        {
+            // Replace with the actual values from your BrokerMessage
+            var param1 = brokerMessage.Message;
+
+            // Convert the string to byte array assuming it's a base64-encoded string
+            //var fileContent = Convert.FromBase64String(param1.ToString());
+
+            // Trigger the file download using JavaScript interop
+            await jsRuntime.InvokeVoidAsync("downloadFile", param1.ToString(), brokerMessage.ClientID + "_" + brokerMessage.CreateDate.ToString() + ".xml");
+            await jsRuntime.InvokeVoidAsync("showAlert", "Downlod file is completed successfully!");
+        }
+        catch (Exception ex)
+        {
+            await jsRuntime.InvokeVoidAsync("showError", "Downlod file is failed. Please contact support team!");
+            // Log or handle the exception as needed
+            //logger.LogError(ex, "An error occurred in DownloadFile");
+        }
+    }
+}

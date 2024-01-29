@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Shabstec.BaggageSystem.Web.props" />
+</Project>

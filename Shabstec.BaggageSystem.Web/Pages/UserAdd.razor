@@ -1,50 +1,66 @@
 ﻿@page "/users/add"
 @using Microsoft.AspNetCore.Authorization;
+@using System.Text;
 @layout MainLayout
 @attribute [Authorize]
 @inject IAlertService AlertService
 @inject IAccountService AccountService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
-<h1>Add User</h1>
-<EditForm Model="@model" OnValidSubmit="OnValidSubmit">
-    <DataAnnotationsValidator />
-    <div class="form-row">
-        <div class="form-group col">
-            <label>First Name</label>
-            <InputText @bind-Value="model.FirstName" class="form-control" />
-            <ValidationMessage For="@(() => model.FirstName)" />
-        </div>
-        <div class="form-group col">
-            <label>Last Name</label>
-            <InputText @bind-Value="model.LastName" class="form-control" />
-            <ValidationMessage For="@(() => model.LastName)" />
-        </div>
+<div class="card">
+    <h4 class="card-header" style="color:blue;">Add User</h4>
+    <div class="card-body">
+        <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+            <DataAnnotationsValidator />
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>Organisation</label>
+                    <InputText @bind-Value="model.Organisation" class="form-control" />
+                    <ValidationMessage For="@(() => model.Organisation)" />
+                </div>
+                <div class="form-group col">
+                    <label>Email</label>
+                    <InputText @bind-Value="model.Email" class="form-control" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>First Name</label>
+                    <InputText @bind-Value="model.FirstName" class="form-control" />
+                    <ValidationMessage For="@(() => model.FirstName)" />
+                </div>
+                <div class="form-group col">
+                    <label>Last Name</label>
+                    <InputText @bind-Value="model.LastName" class="form-control" />
+                    <ValidationMessage For="@(() => model.LastName)" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>Username</label>
+                    <InputText @bind-Value="model.Username" class="form-control" />
+                    <ValidationMessage For="@(() => model.Username)" />
+                </div>
+                <div class="form-group col">
+                    <label>Password</label>
+                    <InputText @bind-Value="model.Password" type="password" class="form-control" />
+                    <ValidationMessage For="@(() => model.Password)" />
+                </div>
+            </div>
+            <div class="form-group">
+                <button disabled="@loading" class="btn btn-primary">
+                    @if (loading)
+                    {
+                        <span class="spinner-border spinner-border-sm mr-1"></span>
+                    }
+                    Save
+                </button>
+                <NavLink href="users" class="btn btn-link">Cancel</NavLink>
+            </div>
+        </EditForm>
     </div>
-    <div class="form-row">
-        <div class="form-group col">
-            <label>Username</label>
-            <InputText @bind-Value="model.Username" class="form-control" />
-            <ValidationMessage For="@(() => model.Username)" />
-        </div>
-        <div class="form-group col">
-            <label>Password</label>
-            <InputText @bind-Value="model.Password" type="password" class="form-control" />
-            <ValidationMessage For="@(() => model.Password)" />
-        </div>
-    </div>
-    <div class="form-group">
-        <button disabled="@loading" class="btn btn-primary">
-            @if (loading) 
-            {
-                <span class="spinner-border spinner-border-sm mr-1"></span>
-            }
-            Save
-        </button>
-        <NavLink href="users" class="btn btn-link">Cancel</NavLink>
-    </div>
-</EditForm>
-
+</div>
 @code {
     private AddUser model = new AddUser();
     private bool loading;
@@ -54,9 +70,15 @@
         loading = true;
         try
         {
+            // Example user credentials
+            string key = "randomKey123";
+            // Encode and save the password to the database
+            string encodedPassword = EncodePassword(model.Password, key);
+            model.Password = encodedPassword;
             await AccountService.AddUser(model);
             AlertService.Success("User added successfully", keepAfterRouteChange: true);
-            NavigationManager.NavigateTo("users");
+            await JSRuntime.InvokeVoidAsync("showAlert", "User added successfully. Please login");
+            NavigationManager.NavigateTo("login");
         }
         catch (Exception ex)
         {
@@ -64,5 +86,19 @@
             loading = false;
             StateHasChanged();
         }
+    }
+
+    public static string EncodePassword(string password, string key)
+    {
+        // Combine password and key
+        string combinedString = password + key;
+
+        // Convert the combined string to bytes
+        byte[] bytesToEncode = Encoding.UTF8.GetBytes(combinedString);
+
+        // Encode the bytes in Base64
+        string encodedPassword = Convert.ToBase64String(bytesToEncode);
+
+        return encodedPassword;
     }
 }

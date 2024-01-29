@@ -1,0 +1,246 @@
+﻿@page "/editconfiguration"
+@inject IJSRuntime jsRuntime
+@using BlazorApp.Web.Models
+@using Shabstec.BaggageSystem.Web.Models;
+@inject IAlertService AlertService
+@inject IAccountService AccountService
+@inject NavigationManager NavigationManager
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+
+<div class="card">
+    <h4 class="card-header" style="color:green;">Add Airport/Airline Configuration</h4>
+    <div class="card-body">  
+        <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+            <DataAnnotationsValidator />           
+            <div class="section section-primary">
+                <h2 class="section-header">Company Code (Airline/Airport)</h2>
+                <div class="form-group">
+                    <label>Company Code:</label>
+                    <InputText id="selectedCompany" type="text" @bind-Value="model.CompanyCode"
+                               class="form-control" disabled 
+                               placeholder="Enter company code" /> 
+                </div>
+
+            </div>
+            <br />
+            <!-- Section 1: Publishers Configuration -->
+            <div class="section section-primary">
+                <h2 class="section-header">Publish To</h2>
+                <div class="form-group">
+                    <label>Publishers: Airlines/Airport codes:</label>
+                    <InputText id="selectedAirlineTextbox" type="text" @bind-Value="model.PublishTo"
+                           class="form-control"
+                           placeholder="Enter airline codes (comma-separated)" />
+                    @if (!string.IsNullOrWhiteSpace(validationError))
+                    {
+                        <p style="color: red;">@validationError</p>
+                    }
+                </div>
+
+            </div>
+            <div class="section section-tertiary">
+                <h2 class="section-header">Subscribe To</h2>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label>Subscribed Airlines/Airports</label>
+                        <InputText id="selectedAirportTextbox" type="text" @bind-Value="model.SubscribeTo "
+                               class="form-control"
+                               placeholder="Enter airline/airport codes (comma-separated)" />
+                        @if (!string.IsNullOrWhiteSpace(validationErrorNew))
+                        {
+                            <p style="color: red;">@validationErrorNew</p>
+                        }
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <button disabled="@loading" class="btn btn-primary">
+                    @if (loading)
+                    {
+                        <span class="spinner-border spinner-border-sm mr-1"></span>
+                    }
+                    Edit Configuration
+                </button>
+                <NavLink href="users" class="btn btn-link">Cancel</NavLink>
+            </div>
+        </EditForm>
+    </div>
+</div>
+<style>
+    .section {
+        border: 1px solid black;
+        padding: 10px;
+    } 
+    .section-header {
+        background-color: lightgoldenrodyellow; /* Yellow header background color */
+        padding: 5px;
+    }
+</style>
+
+
+@code {
+    private Configuration model = new Configuration();
+    private bool loading;
+    private string enteredAirlineCodes;
+    private string validationError;
+    private string validationErrorNew;
+    private User user;
+     private string id;
+    protected override async Task OnInitializedAsync()
+    { 
+         loading = true;
+        // Load configuration data based on the provided ID in the query string
+        //var uri = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        //var id = QueryHelpers.ParseQuery(uri).TryGetValue("id", out var idValue) ? idValue.FirstOrDefault() : null; 
+        var uri = new Uri(NavigationManager.Uri);
+        var query = uri.Query.TrimStart('?');
+        var keyValuePairs = query.Split('&')
+            .Select(x => x.Split('='))
+            .ToDictionary(x => x[0], x => x.Length > 1 ? x[1] : null);
+
+        if (keyValuePairs.ContainsKey("id"))
+        {
+            id = keyValuePairs["id"];
+        }
+
+        if (!string.IsNullOrEmpty(id))
+        {
+            User user = await AccountService.GetLoggedInUserDetails();
+            if (user != null)
+            {
+                model = await AccountService.GetConfigurationByID(user.Username, user.Organisation, id);
+            }
+        }
+        await LoadAirLinesListAsync();
+        loading = false;
+    }
+        
+     private bool ValidateSubscribeToCodes(string args)
+{        
+    enteredAirlineCodes = args?.ToString(); 
+    // Split the entered codes by commas
+    var enteredCodes = enteredAirlineCodes?.Split(','); 
+    //var mergedList = AvailableAirlines.Concat(AvailableAirports).ToList();
+    List<AirlineInfo> mergedList = new List<AirlineInfo>();
+    // Add all items from AvailableAirlines and AvailableAirports to the mergedList
+    mergedList.AddRange(AvailableAirlines);
+    mergedList.AddRange(AvailableAirports);
+    // Validate each entered code
+    foreach (var code in enteredCodes)
+    {
+        var trimmedCode = code.Trim(); 
+        // Check if the trimmed code exists in AvailableAirlines
+        var exists = mergedList.Any(airline => airline.Code == trimmedCode);  
+        if (!exists)
+        {            
+            // Handle validation error (you can set an error message or perform other actions)
+            Console.WriteLine($"Invalid airline/airport code: {trimmedCode}");
+            // Set validation error message
+            validationErrorNew = validationErrorNew + $"Invalid airline/airport code: {trimmedCode}. Please correct.";
+            loading = false;
+            return false; // Stop further validation
+        }
+        
+    } 
+    loading = false;
+    // Validation successful if no errors found
+    return true; 
+}
+
+    private bool ValidatePublishToCodes(string args)
+{        
+    enteredAirlineCodes = args?.ToString(); 
+    // Split the entered codes by commas
+    var enteredCodes = enteredAirlineCodes?.Split(','); 
+    //var mergedList = AvailableAirlines.Concat(AvailableAirports).ToList();
+    List<AirlineInfo> mergedList = new List<AirlineInfo>();
+    // Add all items from AvailableAirlines and AvailableAirports to the mergedList
+    mergedList.AddRange(AvailableAirlines);
+    mergedList.AddRange(AvailableAirports);
+    // Validate each entered code
+    foreach (var code in enteredCodes)
+    {
+        var trimmedCode = code.Trim(); 
+        // Check if the trimmed code exists in AvailableAirlines
+        var exists = mergedList.Any(airline => airline.Code == trimmedCode);  
+        if (!exists)
+        {            
+            // Handle validation error (you can set an error message or perform other actions)
+            Console.WriteLine($"Invalid airline/airport code: {trimmedCode}");
+            // Set validation error message
+            validationError = validationError + $"Invalid airline/airport code: {trimmedCode}. Please correct.";
+            loading = false;
+            return false; // Stop further validation
+        }
+        
+    } 
+    loading = false;
+    // Validation successful if no errors found
+    return true; 
+} 
+
+    public List<AirlineInfo> AvailableAirlines { get; private set; }
+    public List<AirlineInfo> AvailableAirports { get; private set; }
+
+    public async Task LoadAirLinesListAsync()
+    {
+        loading = true;
+        AvailableAirlines = new List<AirlineInfo>();
+        AvailableAirlines = await AccountService.GetAirlineList();
+        AvailableAirports = new List<AirlineInfo>();
+        AvailableAirports = await AccountService.GetAirportCodes();
+        loading = false;
+    }
+     
+    private async void OnValidSubmit()
+    {
+        AlertService.Clear(); 
+        loading = true; 
+        try
+        {
+            bool validPublishToAirline = ValidatePublishToCodes(model.PublishTo);
+            if(validPublishToAirline == false)
+            {
+             await jsRuntime.InvokeVoidAsync("showError", "PublishTo list is invalid. Please correct!");
+             loading = false;
+             return;
+            } 
+
+            bool validSubscribeToAirline = ValidateSubscribeToCodes(model.SubscribeTo);
+            if(validSubscribeToAirline == false)
+            {
+             await jsRuntime.InvokeVoidAsync("showError", "SubscribeTo list is invalid. Please correct!");
+             loading = false;
+             return;
+            } 
+             
+            user = await AccountService.GetLoggedInUserDetails();
+            // Set readonly model properties
+            model.UserName = user.Username;
+            model.Organization = user.Organisation;
+            model.id = id;
+            await AccountService.Baggage(model);            
+            await jsRuntime.InvokeVoidAsync("showAlert", "Configuration updated successfully!");
+            NavigationManager.NavigateTo("configuration");
+            loading = false;
+        }
+        catch (Exception ex)
+        {
+            AlertService.Error(ex.Message);
+             await jsRuntime.InvokeVoidAsync("showError", "Configuration failed to update!");
+            loading = false;
+            StateHasChanged();
+        }
+        finally
+        {
+        loading = false;
+        }
+    }
+
+    private void ResetForm()
+    {
+        // Reset the form by creating a new Configuration object
+        model = new Configuration();
+    } 
+}

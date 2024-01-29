@@ -1,0 +1,67 @@
+﻿@page "/alert"
+@if (IsAlertVisible)
+{
+    <div class="alert-container">
+        <div class="alert-box">
+            <p>@AlertMessage</p>
+            @if (ShowInput)
+            {
+                <input type="text" @bind="InputValue" />
+            }
+            <div class="button-container">
+                <button @onclick="OnOkClick">OK</button>
+                @if (ShowCancel)
+                {
+                    <button @onclick="OnCancelClick">Cancel</button>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private bool IsAlertVisible { get; set; }
+    private string AlertMessage { get; set; }
+    private bool ShowInput { get; set; }
+    private bool ShowCancel { get; set; }
+    private string InputValue { get; set; }
+
+    public void ShowAlert(string message)
+    {
+        IsAlertVisible = true;
+        AlertMessage = message;
+        ShowInput = false;
+        ShowCancel = false;
+    }
+
+    public void ShowConfirm(string message)
+    {
+        IsAlertVisible = true;
+        AlertMessage = message;
+        ShowInput = false;
+        ShowCancel = true;
+    }
+
+    public void ShowPrompt(string message, string defaultValue = "")
+    {
+        IsAlertVisible = true;
+        AlertMessage = message;
+        ShowInput = true;
+        ShowCancel = true;
+        InputValue = defaultValue;
+    }
+
+    private void OnOkClick()
+    {
+        // Handle OK button click
+        IsAlertVisible = false;
+        // Perform any additional logic here based on the alert type
+    }
+
+    private void OnCancelClick()
+    {
+        // Handle Cancel button click
+        IsAlertVisible = false;
+        // Perform any additional logic here based on the alert type
+    }
+}

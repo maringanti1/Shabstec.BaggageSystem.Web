@@ -1,0 +1,58 @@
+﻿@page "/transmitter"
+@using System.Text;
+@using System.Net.Http;
+@using System.Text.Json;
+@using BlazorApp.Web.Models;
+@using Microsoft.AspNetCore.Authorization;
+@using Shabstec.BaggageSystem.Web.Models;
+@inject IAlertService AlertService
+@attribute [Authorize]
+@inject IAccountService AccountService 
+@inject IJSRuntime jsRuntime
+
+<div style="color:white">
+    <h1>Upload</h1> 
+    <textarea id="messageBody" class="form-control" rows="10" @bind="messageModel.EventData"></textarea>  
+    <br /> 
+    <button class="btn btn-primary" @onclick="SendMessage">Send Message</button>
+
+    @if (loading)
+    {
+            <div class="sample" style="white-space: nowrap; overflow: hidden;">
+                <span class="spinner-border spinner-border-lg mr-1"></span>
+                <span style="color: red;">Please wait, the upload is in progress.</span>
+            </div>
+    }
+</div>
+
+@code {
+    private AlertComponent alertComponent;
+    private string messageBody;
+    private string selectedTopic;
+    private bool loading; 
+    private List<string> topicNames; 
+    private MessageModel messageModel = new MessageModel();  
+    private async Task SendMessage()
+    { 
+        loading = true;
+        AlertService.Clear();
+        User user = await AccountService.GetLoggedInUserDetails();
+        // Set readonly model properties
+        messageModel.Topic = user.Organisation.Trim().ToLower().Replace(" ", "").ToString();
+        // Create a payload with message and topic 
+        Boolean successs = await AccountService.UploadMessage(messageModel);
+        if (successs)
+        { 
+            await jsRuntime.InvokeVoidAsync("showAlert", "Message publish completed successfully!");
+            //alertComponent.ShowAlert("Message publish completed successfully!");
+            messageModel.EventData = ""; 
+            loading = false;
+        }
+        else
+        {
+            await jsRuntime.InvokeVoidAsync("showError", "Message publish failed!");
+            loading = false;
+        }
+    } 
+    
+}

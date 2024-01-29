@@ -13,97 +13,96 @@ namespace Shabstec.BaggageSystem.Web.Pages
     using global::System.Threading.Tasks;
     using global::Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 1 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 2 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 3 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 4 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 5 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 6 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 7 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 8 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Shabstec.BaggageSystem.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 9 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Shabstec.BaggageSystem.Web.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 10 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Shabstec.BaggageSystem.Web.Pages;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
-using BlazorApp.Helpers;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 2 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\Register.razor"
+#line 11 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using BlazorApp.Services;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\Register.razor"
+#line 13 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+using BlazorApp.Helpers;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\Register.razor"
 using BlazorApp.Web.Models;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Components.LayoutAttribute(typeof(MainLayout))]
     [global::Microsoft.AspNetCore.Components.RouteAttribute("/register")]
     public partial class Register : global::Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -113,37 +112,98 @@ using BlazorApp.Web.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 127 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\Register.razor"
+#line 117 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\Register.razor"
        
+
+
     private Registration model = new Registration();
     private bool loading;
+    private string selectedCountry = "US"; // Default country code
 
-    private async void OnValidSubmit()
+    public List<countries> CountryCodeList { get; private set; }
+
+    public async Task LoadCountryCodeListAsync()
+    {
+        List<string> data = new List<string>();
+        CountryCodeList = new List<countries>();
+        data = await AccountService.GetCountryCodeList();
+        foreach (var d in data)
+            CountryCodeList.Add(new countries
+                {
+
+                    code = d.ToString(),
+                    name = d.ToString()
+                });
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadCountryCodeListAsync();
+    }
+
+
+    //protected override void OnAfterRender(bool firstRender)
+    //{
+    //    if (firstRender)
+    //    {
+    //        // This block of code will run only on the initial render of the component
+    //        ExecuteJavaScript();
+    //    }
+    //}
+
+    //private void ExecuteJavaScript()
+    //{
+    //    // Your JavaScript code goes here
+    //    JSRuntime.InvokeVoidAsync("InvokeService");
+    //}
+
+    //[JSInvokable]
+    //public async Task InvokeService()
+    //{
+    //    // Your XML data
+    //    var xmlStringForJs = xmlString.Replace("\"", "\\\""); // Escape double quotes for JavaScript
+
+    //    await JSRuntime.InvokeVoidAsync("parseXmlAndPopulateDropdown", xmlStringForJs);
+    //}
+
+    // protected override async Task OnInitializedAsync()
+    //{
+    //    AlertServiceData.Clear("");
+    //    loading = true;
+    //    configurations = await AccountService.GetAllConfigurations();
+    //    loading = false;
+    //}
+
+    public async void OnValidSubmit()
     {
         // reset alerts on submit
-        AlertService.Clear();
+        AlertServiceData.Clear("");
 
         loading = true;
         try
         {
             await AccountService.Register(model);
-            AlertService.Success("Registration successful", keepAfterRouteChange: true);
+            AlertServiceData.Success("Registration successful", keepAfterRouteChange: true);
             NavigationManager.NavigateTo("login");
         }
         catch (Exception ex)
         {
-            AlertService.Error(ex.Message);
+            AlertServiceData.Error(ex.Message);
             loading = false;
             StateHasChanged();
         }
     }
 
+
+
+
 #line default
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAlertService AlertService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAlertService AlertServiceData { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAccountService AccountService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
     }
 }
 #pragma warning restore 1591

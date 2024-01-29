@@ -1,9 +1,11 @@
-﻿@page "/login"  
+﻿@page "/login"
 @inject IJSRuntime JSRuntime
 @layout MainLayout
 @inject IAccountService AccountService
 @inject IAlertService AlertService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+
 
 <div class="card">
     <h4 class="card-header" style="color:blue;">Login</h4>
@@ -21,7 +23,7 @@
                 <ValidationMessage For="@(() => model.Password)" />
             </div>
             <button disabled="@loading" class="btn btn-primary">
-                @if (loading) 
+                @if (loading)
                 {
                     <span class="spinner-border spinner-border-sm mr-1"></span>
                 }
@@ -44,21 +46,28 @@
         loading = true;
         try
         {
-            await AccountService.Login(model);
-            var returnUrl = NavigationManager.QueryString("returnUrl") ?? "/configuration";
-            NavigationManager.NavigateTo(returnUrl);
-            await RefreshPageAsync();
-            StateHasChanged();
+            bool status = await AccountService.Login(model);
+            if (status)
+            {
+                var returnUrl = NavigationManager.QueryString("returnUrl") ?? "/configuration";
+                NavigationManager.NavigateTo(returnUrl);
+                // Trigger a page reload using JavaScript interop
+                await JSRuntime.InvokeVoidAsync("showAlert", "Login successful!");
+                await JSRuntime.InvokeVoidAsync("location.reload");
+            }
+            else
+            {  
+                await JSRuntime.InvokeVoidAsync("showError", "Login failed!");
+                NavigationManager.NavigateTo("/login");
+            }
         }
         catch (Exception ex)
         {
-            AlertService.Error(ex.Message);
+            await JSRuntime.InvokeVoidAsync("showError", "Login failed!");
             loading = false;
             StateHasChanged();
+            NavigationManager.NavigateTo("/login");
         }
     }
-    private async Task RefreshPageAsync()
-    {
-        await JSRuntime.InvokeVoidAsync("refreshPage");
-    }
+
 }

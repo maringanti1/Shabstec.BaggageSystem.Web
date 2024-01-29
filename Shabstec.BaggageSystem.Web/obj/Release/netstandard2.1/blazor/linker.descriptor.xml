@@ -1,0 +1,5 @@
+﻿<linker>
+  <assembly fullname="Shabstec.BaggageSystem.Web">
+    <type fullname="*" required="true" />
+  </assembly>
+</linker>

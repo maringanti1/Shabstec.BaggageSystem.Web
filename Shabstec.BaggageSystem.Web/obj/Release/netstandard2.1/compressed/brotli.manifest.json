@@ -1,0 +1,339 @@
+{
+  "FilesToCompress": [
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Se-YePqXppXJW5XfVsGva2aZMy2hgonxbOCK2TMJDFo=.hash",
+      "Source": "C:\\Users\\laxmi\\.nuget\\packages\\blazortable\\1.17.0\\lib\\netstandard2.1\\da\\BlazorTable.resources.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/da\/BlazorTable.resources.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\rQNdJKIM_MVyUzKsRlFJkstSsWLjaZRT1qIkzYBGQWk=.hash",
+      "Source": "C:\\Users\\laxmi\\.nuget\\packages\\blazortable\\1.17.0\\lib\\netstandard2.1\\de\\BlazorTable.resources.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/de\/BlazorTable.resources.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Bb1fHoTo-S2KRWEO0CiCerIaHsz-aUEwR3BmKsolqQ4=.hash",
+      "Source": "C:\\Users\\laxmi\\.nuget\\packages\\blazortable\\1.17.0\\lib\\netstandard2.1\\es\\BlazorTable.resources.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/es\/BlazorTable.resources.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\OlI2vo1QOcFirwqO9Z1cNPoWERb9OZcbFA0uiT2IkEA=.hash",
+      "Source": "C:\\Users\\laxmi\\.nuget\\packages\\blazortable\\1.17.0\\lib\\netstandard2.1\\fr\\BlazorTable.resources.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/fr\/BlazorTable.resources.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\a-Kg78HyAaQ_u6SnW_l1NuuA7dmyXVn3nnXa4nO31nM=.hash",
+      "Source": "C:\\Users\\laxmi\\.nuget\\packages\\blazortable\\1.17.0\\lib\\netstandard2.1\\pt-BR\\BlazorTable.resources.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/pt-BR\/BlazorTable.resources.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\KZcukrdZt8Rujp23bt77TD8sdBkpUFYWk1wocTZbiEU=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Azure.Core.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Azure.Core.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\l3bsCAVJ0N8XeEh_fGw48U8-Tg8RGE7IluLh6T0V4ls=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\BlazorTable.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/BlazorTable.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\E0Lcw7hD2DXIaFf_2Z06H3GM8KbmTgfIh17QMofZ8ek=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\DataTables.Blazored.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/DataTables.Blazored.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\fZyVdoUiStsIuAjrdAlIHIdWKft6CIZnQAZL9IkZT0I=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\LinqKit.Core.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/LinqKit.Core.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\0rCrqJzYmJRwlCEyezjnZmEWHFO5JiqunWcHc1CSgu8=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Authorization.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Authorization.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\fmnaSxGBR-_udxrZjwT-8FZM3lRsDa8Haqkzu9vMEZU=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\JQxe9YBdTCrDno299ePvOCQaEwSONeAovlEUC1xy6lc=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.Forms.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Forms.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\OXv88P1HGkveBFS3iT5L-ef3hBZgfkj16rCDfwUm1BY=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.Web.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Web.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\DJsGKUvbhHqehvI9xCPSo3-5EiWq8vuzLMbc_QZR1aI=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.WebAssembly.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.WebAssembly.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ZaXtMc3J7jlYJjobDdoagvw210Oeb_OxrQTFmOabqKs=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Metadata.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Metadata.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\DBHYQL1lyeTK5s2FTzuPVqkCT7o9cJWJLeXTwrTEzH4=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Azure.Cosmos.Client.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Azure.Cosmos.Client.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\gnl1BoGHqmWUwN1fmCW-BEuFhsK1XuQovjWXQagyBxY=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Azure.Cosmos.Core.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Azure.Cosmos.Core.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\daLXqW5YI3yEf1uGtXxHrsipnxO54r4JzNewL8qDGdM=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Azure.Cosmos.Direct.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Azure.Cosmos.Direct.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\sdvsw6_VtGUWa6xQk1C1UWpBqPl6kcYfnm0QgoAp3RA=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Azure.Cosmos.Serialization.HybridRow.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Azure.Cosmos.Serialization.HybridRow.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\OBWh2or_2mU6elwqPfmL72FBZVKl2WzTJ4L-IrKeXM4=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Bcl.AsyncInterfaces.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Bcl.AsyncInterfaces.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\EgI54utAG8-FzG3MEe0rzng4UdnK_GAS1_T5G6CzXfk=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Bcl.HashCode.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Bcl.HashCode.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\RcYAHNGysqiAZboWfKyBG579h0kLEd3oF5qZqh0o5oE=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.CSharp.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.CSharp.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\WbiUUh00V5VMgctFE7Zp_p8ApPTdsNI0Tss0PXmY4mw=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.Abstractions.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Z_8kM1Llua_AtYh7oDe-tjEIhDkcGI3djcVNrwwuS3I=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\5sPzTEnMe-Ra0o-B58FnyTmeOseuCO2V3mYiWCDvDls=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Json.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.Json.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\KNx2Chbf3lYR4xQGwLd0kwLgukMWz75uy8hDXE4-5jI=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.DependencyInjection.Abstractions.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\kkn0vh6Agmu8gFmoLEZblZFqj8RHrteK_Z3Xx4ANGHs=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.DependencyInjection.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Q6FI2OYTsE0mVWlV9O-oq3xQClxSEQYaJju4kelHZ30=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Localization.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Localization.Abstractions.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\78UhSnV-mB0tRH6vpm9kEHOA7FMcZcXvObh4IR8pw8M=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Localization.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Localization.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\I_7FYX4nLfDUDjhgCQqxdiG8A-VJGw9MrQtmRTy0vnM=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.Abstractions.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\rsMPGT3XHyhHKSeZqFITZ0JGDFCD2lPi78CarY0TS5s=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\sgG-pGbzM05UT2d5bAuaqD8wJj5jiUvK5p0b43F_0uc=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Options.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Options.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\aOo1lc46Pf83xPHZDDxyV42AjXq7Z_TuYwwkf9OBThY=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Primitives.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Primitives.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\BbmjcMP8dOqrvnmDu-mJrVGVsV3LRX6z5nmumWZ4WcY=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.JSInterop.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\czNf3btAeBW-vvID5LAfgcsNZ_GM3ssVuPaMflcg0rs=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.JSInterop.WebAssembly.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\puA3jxJvqBUqmWqlBKk4tOi2PUFuQH6sIqwTiDrooyM=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Net.Http.Headers.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Net.Http.Headers.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\9lLGawTWP8cHThz_EjyAK4y1jf19_JBDQ0dOgLZ6hIQ=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Mono.Security.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Mono.Security.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Nxg9HrqMTZyiLGXHr5XDhA2rkWvrHW4XAU2KJgAhtaE=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\mscorlib.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/mscorlib.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\naAtXi1JXISFi9FzlBE3Nf-hAziUtUVOSq4BVU0uIn8=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\netstandard.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/netstandard.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\-mVO4WG6u6Anqo7Se54eTo9SaodjYqbNL9CDx8DKZ1A=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Newtonsoft.Json.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Newtonsoft.Json.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\gw8yWxLmcYNvhsZg_XTDIi861H3Bw6oMypuJJZzMTq0=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Serilog.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Serilog.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\LWJIAW-KvorFv9Kv6NfxF1AZMOi-nx9G1b3PKQ3SXD4=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Serilog.Sinks.File.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Serilog.Sinks.File.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\M6w0HToJD0k463fMsi3xRpio_WwW50MJCplIHGD-fq4=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\Shabstec.BaggageSystem.Web.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Shabstec.BaggageSystem.Web.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\UDL7m1VdLj5xCZjX69IMjsXokV1Weu4S1v3yBgiVo2Y=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Collections.Immutable.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Collections.Immutable.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\D4CfbO_NbN47Izu9J36y_3qSxHRSHJFqM5Dv5aGWxKc=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.ComponentModel.DataAnnotations.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.ComponentModel.DataAnnotations.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\u96QZorkKsqAjA3wdDAjKKcmEZokJr9VXaZAY2GuShk=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Configuration.ConfigurationManager.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Configuration.ConfigurationManager.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\PjjNahBRi0SlHME-bh6f4cLPm3YpZmolM8IL09KCJ7A=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Core.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Core.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\koAzoaojWLJcJ2cfH2oTLO08XxO_fED1pD_0Kb83MFw=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Data.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Data.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\h7OQsAUPT6L7Ons5qwbFZxYcNUwlX2KVJZsN64nSbFQ=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Diagnostics.DiagnosticSource.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Diagnostics.DiagnosticSource.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\McaT1bi5RqwQwOOzAu_I7aQd-TnzBPXAc-iJ0g-7K2Y=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\DCFDUkz84tVocPw1GHKkGxyRFE865Uyx3dsCgCFAxdw=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Memory.Data.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Memory.Data.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\QM0T20JbVPXj3pXSsg2qLSmrXe_3YHUSKrLeZZFNDY0=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\-huF2n_lOkvkKGroGhBYFPPqjW_y7pfGeVaxSD4FHSM=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.Json.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.Json.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\er-4mpvEFwwSCDLpMG5TmJF6Nt--ZC6-kQmJckpYD1k=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.WebAssemblyHttpHandler.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.WebAssemblyHttpHandler.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\tZfhf3fqOFBKoJXyRZrUm4CtLWMX6m78WTmNSt0kHOo=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Numerics.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Numerics.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\w0Sjc_GtmOINp0uzpJl_0N1tdsYDfIodk9GOcKfyT8w=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Runtime.CompilerServices.Unsafe.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Runtime.CompilerServices.Unsafe.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\8BpgHXY9dbDoDBiigAxJRNoH_qLTBsDOYgXp0yqcP5I=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Runtime.Serialization.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Runtime.Serialization.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\0zqGAXHnEYeiEwkx-tmJOIOFlWxI8P2nja4y_tIg3Rk=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Encodings.Web.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Encodings.Web.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\KN8dLV5QcKwcixhPDLm9somr5PzdxK_sK7CiGDF3dqA=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Json.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Json.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\3XtSd2jrPr5XK7qyOKYnall0OHC5mXH7ah_y-woaGJk=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Xml.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Xml.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\k3i8QGpp2i49TQH5_wHyUy_fCN66fpczg2_RYUuvmRQ=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Xml.Linq.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Xml.Linq.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\MjaQ5F3RFZcsf9o4vLKe_EZK8-mzjJ_6-4347QSsyuA=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\linker\\WebAssembly.Bindings.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/WebAssembly.Bindings.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=.hash",
+      "Source": "C:\\Users\\laxmi\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.runtime\\3.2.0\\tools\\dotnetwasm\\wasm\\dotnet.3.2.0.js",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/wasm\/dotnet.3.2.0.js.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\3S0qzYaBEKOBXarzVLNzNAFXlwJr6nI3lFlYUpQTPH8=.hash",
+      "Source": "C:\\Users\\laxmi\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.runtime\\3.2.0\\tools\\dotnetwasm\\wasm\\dotnet.timezones.dat",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/wasm\/dotnet.timezones.dat.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\UC-3Rm1NkdNdlIrzYARo_dO-HDlS5mhPxo0IQv7kma8=.hash",
+      "Source": "C:\\Users\\laxmi\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.runtime\\3.2.0\\tools\\dotnetwasm\\wasm\\dotnet.wasm",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/wasm\/dotnet.wasm.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\SPHS1EAPAcMFN4TEIUYl3FWtoCQTsNJch0XVGgok1eE=.hash",
+      "Source": "C:\\Users\\laxmi\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.build\\3.2.1\\tools\\blazor\\blazor.webassembly.js",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\EGewAKGU4B_r3XCusFOKO-gF4azpZCHPD-zrre_WA6M=.hash",
+      "Source": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\Release\\netstandard2.1\\blazor\\blazor.boot.json",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.br"
+    }
+  ]
+}

@@ -13,99 +13,99 @@ namespace Shabstec.BaggageSystem.Web.Pages
     using global::System.Threading.Tasks;
     using global::Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 1 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 2 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 3 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 4 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 5 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 6 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 7 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 8 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Shabstec.BaggageSystem.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 9 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Shabstec.BaggageSystem.Web.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 10 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using Shabstec.BaggageSystem.Web.Pages;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 11 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using BlazorApp.Services;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
+#line 13 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\_Imports.razor"
 using BlazorApp.Helpers;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigAdd.razor"
-using Microsoft.Azure.Cosmos;
+#line 3 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigAdd.razor"
+using BlazorApp.Web.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigAdd.razor"
-using BlazorApp.Web.Models;
+#line 4 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigAdd.razor"
+using Shabstec.BaggageSystem.Web.Models;
 
 #line default
 #line hidden
@@ -119,27 +119,130 @@ using BlazorApp.Web.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 127 "C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigAdd.razor"
+#line 88 "C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\Pages\ConfigAdd.razor"
        
     private Configuration model = new Configuration();
     private bool loading;
+    private string enteredAirlineCodes;
+    private string validationError;
+    private string validationErrorNew;
+    private User user;
 
+    protected override async Task OnInitializedAsync()
+    { 
+        await LoadAirLinesListAsync();
+    }
+        
+     private void ValidateAirportCodes(ChangeEventArgs args)
+    {
+        enteredAirlineCodes = args.Value?.ToString(); 
+        // Split the entered codes by commas
+        var enteredCodes = enteredAirlineCodes?.Split(','); 
+        // Validate each entered code
+        foreach (var code in enteredCodes)
+        {
+            var trimmedCode = code.Trim(); 
+            // Check if the trimmed code exists in AvailableAirlines
+            var exists = AvailableAirlines.Any(airline => airline.Code == trimmedCode);  
+            if (!exists)
+            {
+                // Handle validation error (you can set an error message or perform other actions)
+                Console.WriteLine($"Invalid airline code: {trimmedCode}");
+                // Set validation error message
+                validationErrorNew = validationErrorNew + $"Invalid airline code: {trimmedCode}. Please correct.";
+                return; // Stop further validation
+            }
+            var airportExists = AvailableAirports.Any(airport => airport.Code == trimmedCode);
+            if (!airportExists)
+            {
+                 Console.WriteLine($"Invalid airline code: {trimmedCode}");
+                validationErrorNew = validationErrorNew + $"Invalid airline code: {trimmedCode}. Please correct.";
+                return; // Stop further validation
+                // Handle validation error (you can set an error message or perform other actions)
+               
+            }
+        } 
+        // You can use 'enteredAirlineCodes' for further processing if needed
+    }
+
+    private void ValidateAirlineCodes(ChangeEventArgs args)
+    {
+        enteredAirlineCodes = args.Value?.ToString();
+
+        // Split the entered codes by commas
+        var enteredCodes = enteredAirlineCodes?.Split(',');
+
+        // Validate each entered code
+        foreach (var code in enteredCodes)
+        {
+            var trimmedCode = code.Trim();
+
+            // Check if the trimmed code exists in AvailableAirlines
+            var exists = AvailableAirlines.Any(airline => airline.Code == trimmedCode);
+
+            if (!exists)
+            {
+                // Handle validation error (you can set an error message or perform other actions)
+                Console.WriteLine($"Invalid airline code: {trimmedCode}");
+                // Set validation error message
+                validationError = validationError + $"Invalid airline code: {trimmedCode}. Please correct.";
+                return; // Stop further validation
+            }
+            var airportExists = AvailableAirports.Any(airport => airport.Code == trimmedCode);
+            if (!airportExists)
+            {
+                // Handle validation error (you can set an error message or perform other actions)
+                Console.WriteLine($"Invalid airport code: {trimmedCode}");
+                validationError = validationError + $"Invalid airport code: {trimmedCode}. Please correct.";
+                return; // Stop further validation
+            }
+        }
+         
+    }
+    public List<AirlineInfo> AvailableAirlines { get; private set; }
+    public List<AirlineInfo> AvailableAirports { get; private set; }
+
+    public async Task LoadAirLinesListAsync()
+    {
+        AvailableAirlines = new List<AirlineInfo>();
+        AvailableAirlines = await AccountService.GetAirlineList();
+        AvailableAirports = new List<AirlineInfo>();
+        AvailableAirports = await AccountService.GetAirportCodes();
+       
+    }
+
+    public async Task LoadAirportsListAsync()
+    {
+        AvailableAirports = new List<AirlineInfo>();
+        AvailableAirports = await AccountService.GetAirportCodes();
+    }
+
+
+    //private List<AirportInfo> AvailableAirports = new List<AirportInfo>
+
+  
+     
     private async void OnValidSubmit()
     {
         AlertService.Clear();
 
         loading = true;
-        
+
         try
         {
-            // Save the configuration using AccountService
+            user = await AccountService.GetLoggedInUserDetails();
+            // Set readonly model properties
+            model.UserName = user.Username;
+            model.Organization = user.Organisation;
             await AccountService.Baggage(model);
-            AlertService.Success("Configuration added successfully", keepAfterRouteChange: true);
+            //AlertService.Success("Configuration added successfully", keepAfterRouteChange: true);
+            await jsRuntime.InvokeVoidAsync("showAlert", "Configuration added successfully!");
             NavigationManager.NavigateTo("configuration");
         }
         catch (Exception ex)
         {
             AlertService.Error(ex.Message);
+            await jsRuntime.InvokeVoidAsync("showError", "Configuration failed to add!");
             loading = false;
             StateHasChanged();
         }
@@ -151,12 +254,16 @@ using BlazorApp.Web.Models;
         model = new Configuration();
     }
 
+
+
+
 #line default
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAccountService AccountService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAlertService AlertService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRuntime { get; set; }
     }
 }
 #pragma warning restore 1591

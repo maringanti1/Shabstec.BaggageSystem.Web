@@ -5,12 +5,12 @@
 
 
 <div class="card">
-    <h4 class="card-header" style="color:blue;">Login</h4>
+    <h4 class="card-header" style="color:blue;">Dashboard</h4>
     <div class="card-body">
-        <h3 style="color:white;">User Chart</h3>
+        <h3 style="color:black;">User Chart</h3>
         <div id="userChart"></div>
 
-        <h3 style="color:white;">Configuration Pie Chart</h3>
+        <h3 style="color:black;">Configuration Pie Chart</h3>
         <div id="configPieChart"></div>
     </div>
 </div>
@@ -26,7 +26,7 @@
     {
         // Initialize users and configurations (you should populate them accordingly)
         List<User> users = await AccountService.GetAll();
-        IList<Configuration> configurations = await AccountService.GetAllConfigurations();
+        IList<Configuration> configurations = await AccountService.GetAllConfigurations("", "");
         // Create chart scripts
         userChartScript = GenerateUserChartScript(users);
         configPieChartScript = GenerateConfigPieChartScript(configurations);
@@ -97,7 +97,7 @@
                 }},
                 series: [{{
                     name: 'Configuration',
-                    data: {JsonSerializer.Serialize(configurations.Select(c => new { name = c.UserName, y = c.AirLineCodes.Length }))}
+                    data: {JsonSerializer.Serialize(configurations.Select(c => new { name = c.UserName, y = c.AirLineCodesData.Count }))}
                 }}]
             }});
         ";

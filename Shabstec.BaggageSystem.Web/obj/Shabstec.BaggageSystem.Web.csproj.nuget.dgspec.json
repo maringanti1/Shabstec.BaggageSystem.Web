@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repository\\RabbitMQ\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem.Web.csproj": {}
+    "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem.Web.csproj": {}
   },
   "projects": {
-    "C:\\Repository\\RabbitMQ\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem.Web.csproj": {
+    "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repository\\RabbitMQ\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem.Web.csproj",
+        "projectUniqueName": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem.Web.csproj",
         "projectName": "Shabstec.BaggageSystem.Web",
-        "projectPath": "C:\\Repository\\RabbitMQ\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem.Web.csproj",
+        "projectPath": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem.Web.csproj",
         "packagesPath": "C:\\Users\\laxmi\\.nuget\\packages\\",
-        "outputPath": "C:\\Repository\\RabbitMQ\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\",
+        "outputPath": "C:\\GITRepos\\Shabstec.BaggageSystem.Web\\Shabstec.BaggageSystem\\Shabstec.BaggageSystem.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\laxmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,14 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "dependencies": {
+            "BlazorTable": {
+              "target": "Package",
+              "version": "[1.17.0, )"
+            },
+            "DataTables.Blazored": {
+              "target": "Package",
+              "version": "[0.0.2, )"
+            },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[3.2.1, )"
@@ -53,6 +61,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.2.1, )"
+            },
+            "Microsoft.AspNetCore.Hosting": {
+              "target": "Package",
+              "version": "[2.2.7, )"
             },
             "Microsoft.Azure.Cosmos": {
               "target": "Package",

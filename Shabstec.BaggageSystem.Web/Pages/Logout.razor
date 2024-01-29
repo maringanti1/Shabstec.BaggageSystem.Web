@@ -6,11 +6,6 @@
 @code {
     protected override async void OnInitialized()
     {
-        await AccountService.Logout();
-        await RefreshPageAsync();
-    }
-    private async Task RefreshPageAsync()
-    {
-        await JSRuntime.InvokeVoidAsync("refreshPage");
-    }
+        await AccountService.Logout(); 
+    } 
 }

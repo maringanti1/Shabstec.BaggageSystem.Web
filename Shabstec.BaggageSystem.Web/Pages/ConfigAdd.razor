@@ -1,149 +1,213 @@
 ﻿@page "/configuration/add"
-@using Microsoft.Azure.Cosmos
+@inject IJSRuntime jsRuntime
 @using BlazorApp.Web.Models
+@using Shabstec.BaggageSystem.Web.Models;
 @inject IAlertService AlertService
 @inject IAccountService AccountService
 @inject NavigationManager NavigationManager
 
-<h1>Add Configuration</h1>
-
-<EditForm Model="@model" OnValidSubmit="OnValidSubmit">
-    <DataAnnotationsValidator />
-
-    <!-- Section 1: Publishers Configuration -->
-    <div class="section section-primary">
-        <h2 class="section-header">Publishers Configuration</h2>
-        <div class="alert alert-warning">
-            Airline Codes are used to fetch the messages from Airlines/Airports service bus queue
-        </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <label>Airline Codes</label>
-                <InputText @bind-Value="model.AirLineCodes" class="form-control" />
-                <ValidationMessage For="@(() => model.AirLineCodes)" />
-            </div>
-            </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <label>Publisher Queue Name</label>
-                <InputText @bind-Value="model.BrokerSvcBusQueueName" class="form-control" />
-                <ValidationMessage For="@(() => model.BrokerSvcBusQueueName)" />
-            </div>
-            </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <label>Publisher Queue End Point</label>
-                <InputText @bind-Value="model.BrokerSvcBusURL" class="form-control" />
-                <ValidationMessage For="@(() => model.BrokerSvcBusURL)" />
-            </div>
-        </div> 
-        </div>
-    <!-- Section 2: Message Broker Configuration -->
-    <div class="section section-secondary">
-        <h2 class="section-header">Message Broker Configuration</h2>
-        <div class="alert alert-warning">
-            RabbitMQ Username and Password are used to login Client's Message broker.
-        </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <label>RabbitMQ Username</label>
-                <InputText @bind-Value="model.RabbitMQUsername" class="form-control" />
-                <ValidationMessage For="@(() => model.RabbitMQUsername)" />
-            </div>
-            <div class="form-group col">
-                <label>RabbitMQ Password</label>
-                <InputText @bind-Value="model.RabbitMQPassword" class="form-control" />
-                <ValidationMessage For="@(() => model.RabbitMQPassword)" />
-            </div>
-        </div>
-    </div>
-
-    <!-- Section 3: Subscriber Configuration -->
-    <div class="section section-tertiary">
-        <h2 class="section-header">Subscriber Configuration</h2>
-        <div class="alert alert-warning">
-            Subscribed Queue End Point and Queue End Name are used to ...
-        </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <label>Subscribed Airlines/Airports</label>
-                <InputText @bind-Value="model.SubscribedQueueTopic" class="form-control" />
-                <ValidationMessage For="@(() => model.SubscribedQueueTopic)" />
-            </div>
-            </div>
-            <div class="form-row">
-            <div class="form-group col">
-                <label>Subscribed Queue End Point</label>
-                <InputText @bind-Value="model.SubscribedQueueEndPoint" class="form-control" />
-                <ValidationMessage For="@(() => model.SubscribedQueueEndPoint)" />
+<div class="card">
+    <h4 class="card-header" style="color:green;">Add Airport/Airline Configuration</h4>
+    <div class="card-body">  
+        <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+            <DataAnnotationsValidator />           
+            <div class="section section-primary">
+                <h2 class="section-header">Company Code (Airline/Airport)</h2>
+                <div class="form-group">
+                    <label>Company Code:</label>
+                    <InputText id="selectedCompany" type="text" @bind-Value="model.CompanyCode"
+                               class="form-control"
+                               placeholder="Enter company code"
+                               onchange="ValidateAirlineCodes" />
+                    @if (!string.IsNullOrWhiteSpace(validationError))
+                    {
+                        <p style="color: red;">@validationError</p>
+                    }
                 </div>
+
+            </div>
+            <br />
+            <!-- Section 1: Publishers Configuration -->
+            <div class="section section-primary">
+                <h2 class="section-header">Publishers Configuration</h2>
+                <div class="form-group">
+                    <label>Publishers: Airlines/Airport codes:</label>
+                    <InputText id="selectedAirlineTextbox" type="text" @bind-Value="model.PublishTo"
+                           class="form-control"
+                           placeholder="Enter airline codes (comma-separated)"
+                           onchange="ValidateAirlineCodes" />
+                    @if (!string.IsNullOrWhiteSpace(validationError))
+                    {
+                        <p style="color: red;">@validationError</p>
+                    }
                 </div>
+
+            </div>
+            <div class="section section-tertiary">
+                <h2 class="section-header">Subscribers Configuration</h2>
                 <div class="form-row">
-             
-            <div class="form-group col">
-                <label>Subscribed Queue Name</label>
-                <InputText @bind-Value="model.SubscribedQueueName" class="form-control" />
-                <ValidationMessage For="@(() => model.SubscribedQueueName)" />
+                    <div class="form-group col">
+                        <label>Subscribed Airlines/Airports</label>
+                        <InputText id="selectedAirportTextbox" type="text" @bind-Value="model.SubscribeTo "
+                               class="form-control"
+                               placeholder="Enter airline/airport codes (comma-separated)"
+                               onchange="ValidateAirportCodes" />
+                        @if (!string.IsNullOrWhiteSpace(validationErrorNew))
+                        {
+                            <p style="color: red;">@validationErrorNew</p>
+                        }
+                    </div>
+                </div>
             </div>
+            <br />
+            <div class="form-group">
+                <button disabled="@loading" class="btn btn-primary">
+                    @if (loading)
+                    {
+                        <span class="spinner-border spinner-border-sm mr-1"></span>
+                    }
+                    Save Configuration
+                </button>
+                <NavLink href="users" class="btn btn-link">Cancel</NavLink>
             </div>
-        </div> 
-
-    <div class="form-group">
-        <button disabled="@loading" class="btn btn-primary">
-            @if (loading)
-            {
-                <span class="spinner-border spinner-border-sm mr-1"></span>
-            }
-            Save Configuration
-        </button>
-        <NavLink href="users" class="btn btn-link">Cancel</NavLink>
+        </EditForm>
     </div>
-</EditForm>
-
+</div>
 <style>
     .section {
         border: 1px solid black;
         padding: 10px;
-    }
-
-    .section-primary {
-        background-color: #f8d7da; /* Red background color */
-    }
-
-    .section-secondary {
-        background-color: #d4edda; /* Green background color */
-    }
-
-    .section-tertiary {
-        background-color: #cfe2f3; /* Blue background color */
-    }
-
+    } 
     .section-header {
         background-color: lightgoldenrodyellow; /* Yellow header background color */
         padding: 5px;
     }
 </style>
 
+
 @code {
     private Configuration model = new Configuration();
     private bool loading;
+    private string enteredAirlineCodes;
+    private string validationError;
+    private string validationErrorNew;
+    private User user;
 
+    protected override async Task OnInitializedAsync()
+    { 
+        await LoadAirLinesListAsync();
+    }
+        
+     private void ValidateAirportCodes(ChangeEventArgs args)
+    {
+        enteredAirlineCodes = args.Value?.ToString(); 
+        // Split the entered codes by commas
+        var enteredCodes = enteredAirlineCodes?.Split(','); 
+        // Validate each entered code
+        foreach (var code in enteredCodes)
+        {
+            var trimmedCode = code.Trim(); 
+            // Check if the trimmed code exists in AvailableAirlines
+            var exists = AvailableAirlines.Any(airline => airline.Code == trimmedCode);  
+            if (!exists)
+            {
+                // Handle validation error (you can set an error message or perform other actions)
+                Console.WriteLine($"Invalid airline code: {trimmedCode}");
+                // Set validation error message
+                validationErrorNew = validationErrorNew + $"Invalid airline code: {trimmedCode}. Please correct.";
+                return; // Stop further validation
+            }
+            var airportExists = AvailableAirports.Any(airport => airport.Code == trimmedCode);
+            if (!airportExists)
+            {
+                 Console.WriteLine($"Invalid airline code: {trimmedCode}");
+                validationErrorNew = validationErrorNew + $"Invalid airline code: {trimmedCode}. Please correct.";
+                return; // Stop further validation
+                // Handle validation error (you can set an error message or perform other actions)
+               
+            }
+        } 
+        // You can use 'enteredAirlineCodes' for further processing if needed
+    }
+
+    private void ValidateAirlineCodes(ChangeEventArgs args)
+    {
+        enteredAirlineCodes = args.Value?.ToString();
+
+        // Split the entered codes by commas
+        var enteredCodes = enteredAirlineCodes?.Split(',');
+
+        // Validate each entered code
+        foreach (var code in enteredCodes)
+        {
+            var trimmedCode = code.Trim();
+
+            // Check if the trimmed code exists in AvailableAirlines
+            var exists = AvailableAirlines.Any(airline => airline.Code == trimmedCode);
+
+            if (!exists)
+            {
+                // Handle validation error (you can set an error message or perform other actions)
+                Console.WriteLine($"Invalid airline code: {trimmedCode}");
+                // Set validation error message
+                validationError = validationError + $"Invalid airline code: {trimmedCode}. Please correct.";
+                return; // Stop further validation
+            }
+            var airportExists = AvailableAirports.Any(airport => airport.Code == trimmedCode);
+            if (!airportExists)
+            {
+                // Handle validation error (you can set an error message or perform other actions)
+                Console.WriteLine($"Invalid airport code: {trimmedCode}");
+                validationError = validationError + $"Invalid airport code: {trimmedCode}. Please correct.";
+                return; // Stop further validation
+            }
+        }
+         
+    }
+    public List<AirlineInfo> AvailableAirlines { get; private set; }
+    public List<AirlineInfo> AvailableAirports { get; private set; }
+
+    public async Task LoadAirLinesListAsync()
+    {
+        AvailableAirlines = new List<AirlineInfo>();
+        AvailableAirlines = await AccountService.GetAirlineList();
+        AvailableAirports = new List<AirlineInfo>();
+        AvailableAirports = await AccountService.GetAirportCodes();
+       
+    }
+
+    public async Task LoadAirportsListAsync()
+    {
+        AvailableAirports = new List<AirlineInfo>();
+        AvailableAirports = await AccountService.GetAirportCodes();
+    }
+
+
+    //private List<AirportInfo> AvailableAirports = new List<AirportInfo>
+
+  
+     
     private async void OnValidSubmit()
     {
         AlertService.Clear();
 
         loading = true;
-        
+
         try
         {
-            // Save the configuration using AccountService
+            user = await AccountService.GetLoggedInUserDetails();
+            // Set readonly model properties
+            model.UserName = user.Username;
+            model.Organization = user.Organisation;
             await AccountService.Baggage(model);
-            AlertService.Success("Configuration added successfully", keepAfterRouteChange: true);
+            //AlertService.Success("Configuration added successfully", keepAfterRouteChange: true);
+            await jsRuntime.InvokeVoidAsync("showAlert", "Configuration added successfully!");
             NavigationManager.NavigateTo("configuration");
         }
         catch (Exception ex)
         {
             AlertService.Error(ex.Message);
+            await jsRuntime.InvokeVoidAsync("showError", "Configuration failed to add!");
             loading = false;
             StateHasChanged();
         }
@@ -154,4 +218,7 @@
         // Reset the form by creating a new Configuration object
         model = new Configuration();
     }
+
+
+
 }

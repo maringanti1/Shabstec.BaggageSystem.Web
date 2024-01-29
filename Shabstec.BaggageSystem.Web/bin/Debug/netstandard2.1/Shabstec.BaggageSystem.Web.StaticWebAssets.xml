@@ -1,3 +1,5 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="C:\Repository\RabbitMQ\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\bin\Debug\netstandard2.1\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\GITRepos\Shabstec.BaggageSystem.Web\Shabstec.BaggageSystem\Shabstec.BaggageSystem.Web\bin\Debug\netstandard2.1\wwwroot\" />
+  <ContentRoot BasePath="_content/BlazorTable" Path="C:\Users\laxmi\.nuget\packages\blazortable\1.17.0\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/DataTables.Blazored" Path="C:\Users\laxmi\.nuget\packages\datatables.blazored\0.0.2\build\..\staticwebassets\" />
 </StaticWebAssets>

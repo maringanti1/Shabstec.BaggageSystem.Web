@@ -17,5 +17,11 @@ namespace BlazorApp.Web.Models
         [Required]
         [MinLength(6, ErrorMessage = "The Password field must be a minimum of 6 characters")]
         public string Password { get; set; }
+        [Required]
+        [MinLength(6, ErrorMessage = "The Organisation field must be a minimum of 6 characters")]
+        public string Organisation { get; set; }
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid email address")]
+        public string Email { get; set; }
     }
 }
